@@ -1,0 +1,17 @@
+{
+  "manifest_version": 2,
+  "name": "TwitchPlayer",
+  "version": "4",
+  "background": {
+      "scripts": ["main.js"]  
+  },
+  "permissions": [
+  	"contextMenus",
+  	"http://localhost/*"
+  	],
+  "icons" : {
+    "16" : "TwitchPlayer-16.png",
+    "48" : "TwitchPlayer-48.png",
+    "128" : "TwitchPlayer-128.png"
+  }
+}
