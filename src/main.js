@@ -20,6 +20,10 @@ chrome.contextMenus.onClicked.addListener(function(info, tab) {
   }
 });
 
+chrome.runtime.onMessage.addListener(function(request, sender, callback) {
+  getClickHandler(request);
+});
+
 function httpPOST(data)
 {
     var client = new XMLHttpRequest();
@@ -36,7 +40,6 @@ function httpPOST(data)
     } 
 
 }
-
 
 function getClickHandler(info) {
     var url;

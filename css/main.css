@@ -1,0 +1,14 @@
+.vlc-button {
+  display: block;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 12px;
+  background: #3498db;
+  padding: 4px 6px 4px 6px;
+  text-decoration: none;
+}
+
+.vlc-button:hover {
+  background: #3cb0fd;
+  text-decoration: none;
+}

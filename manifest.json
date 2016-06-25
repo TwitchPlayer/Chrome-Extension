@@ -3,15 +3,23 @@
   "name": "TwitchPlayer",
   "version": "4",
   "background": {
-      "scripts": ["main.js"]  
+      "scripts": ["src/main.js"]
   },
+  "content_scripts": [
+      {
+        "matches": ["*://www.twitch.tv/directory/*"],
+        "js": ["lib/jquery-3.0.0.min.js","src/content.js"],
+        "css" : ["css/main.css"],
+        "run_at": "document_idle"
+      }
+    ],
   "permissions": [
   	"contextMenus",
   	"http://localhost/*"
   	],
   "icons" : {
-    "16" : "TwitchPlayer-16.png",
-    "48" : "TwitchPlayer-48.png",
-    "128" : "TwitchPlayer-128.png"
+    "16" : "icons/TwitchPlayer-16.png",
+    "48" : "icons/TwitchPlayer-48.png",
+    "128" : "icons/TwitchPlayer-128.png"
   }
 }
