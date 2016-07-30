@@ -15,7 +15,8 @@
     ],
   "permissions": [
   	"contextMenus",
-  	"http://localhost/*"
+  	"http://localhost/*",
+    "nativeMessaging"
   	],
   "icons" : {
     "16" : "icons/TwitchPlayer-16.png",
