@@ -20,22 +20,6 @@ chrome.contextMenus.onClicked.addListener(function(info, tab) {
   }
 });
 
-function httpPOST(data)
-{
-    var client = new XMLHttpRequest();
-    var url = "http://localhost:10000/";
-    var body = 'url = ' + data
-
-    client.open("POST", url, true);
-    client.setRequestHeader('Content-Type', 'text-plain');
-
-    client.send(body);
-
-    client.onreadystatechange = function() { // (3)
-      if (client.readyState != 4) return;
-    } 
-
-}
 
 
 function getClickHandler(info) {
@@ -43,8 +27,9 @@ function getClickHandler(info) {
     var chatUrl;
     url = info.linkUrl;
 
-	  httpPOST(url);
-    
-    chatUrl = url + "/chat?popout=";
+    var port = chrome.runtime.connectNative('com.twitch_ext.chrome_extension');
+    port.postMessage({ url: url });
+
+
     chrome.windows.create({ url: chatUrl, left: 1637, top: 128, width: 284, height: 909, type: "popup"});
 }
